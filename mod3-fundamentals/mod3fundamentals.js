@@ -86,7 +86,6 @@ function questionSeven() {
     //Write isEmpty function here
     function isEmpty(obj) {
         for (let key in obj) {
-            //if the loop has started, there is a property.
             return false;
         }
         return true;
@@ -108,12 +107,15 @@ function questionEight() {
         step: 0,
         up() {
             this.step++;
+            return this;
         },
         down() {
             this.step--;
+            return this;
         },
         showStep: function() { //shows the current step
             console.log( this.step )
+            return this;
         }
     }
 
@@ -139,6 +141,15 @@ function questionEight() {
 
 function questionNine() {
     //Write constructor function here
+   
+    function Accumulator(startingValue) {
+        this.value = startingValue;
+        this.read = function() {
+            let userNumber = prompt("Enter a number");
+           this.value += parseInt(userNumber);
+           console.log(this.value)
+        }
+    }
 
     let accumulator = new Accumulator(1); //initial value 1
 
